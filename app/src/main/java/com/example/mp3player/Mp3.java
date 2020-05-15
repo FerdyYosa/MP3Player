@@ -5,10 +5,10 @@ public class Mp3 {
     private String title;
     private String artist;
 
-    public Mp3(long songID, String songTitle, String songArtist) {
-        id=songID;
-        title=songTitle;
-        artist=songArtist;
+    public Mp3(long mp3ID, String mp3Title, String mp3) {
+        id=mp3ID;
+        title=mp3Title;
+        artist=mp3;
     }
 
     public long getID(){return id;}

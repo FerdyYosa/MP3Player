@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:onClick="mp3Picked">
 
     <TextView
         android:id="@+id/mp3_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#FFFFFF99"
+        android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -15,7 +17,7 @@
         android:id="@+id/mp3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#FFFFFF99"
+        android:textColor="#000000"
         android:textSize="18sp" />
 
 </LinearLayout>
