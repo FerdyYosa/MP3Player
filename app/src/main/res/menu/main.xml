@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
 
     <item
         android:id="@+id/action_shuffle"
         android:icon="@drawable/rand"
         android:orderInCategory="1"
-        app:showAsAction="ifRoom"
-        android:title="Shuffle"/>
+        app:showAsAction="always"
+        android:title="Shuffle"
+        android:visible="true"/>
 
     <item
         android:id="@+id/action_end"
         android:icon="@drawable/end"
         android:orderInCategory="2"
         android:title="End"
-        app:showAsAction="always" />
+        app:showAsAction="always"
+        android:visible="true"/>
 
 </menu>

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="5dp"
+    android:layout_marginTop="683dp"
     android:onClick="mp3Picked">
 
     <TextView
@@ -16,8 +16,8 @@
     <TextView
         android:id="@+id/mp3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:textColor="#000000"
-        android:textSize="18sp" />
+        android:textSize="18sp"/>
 
 </LinearLayout>
