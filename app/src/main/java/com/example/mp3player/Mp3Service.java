@@ -93,7 +93,7 @@ public class Mp3Service extends Service implements
         return false;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+
     @Override
     public void onPrepared(MediaPlayer mp) {
         mp.start();
