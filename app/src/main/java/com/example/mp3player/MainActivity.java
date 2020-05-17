@@ -1,13 +1,6 @@
 package com.example.mp3player;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
-import android.Manifest;
-import android.app.Activity;
-import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,13 +16,11 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import com.example.mp3player.Mp3Service.Mp3Binder;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.MediaController;
-import android.widget.MediaController.MediaPlayerControl;
 
-public class MainActivity extends Activity implements MediaPlayerControl {
+public class MainActivity extends AppCompatActivity implements MediaController.MediaPlayerControl {
 
     private ArrayList<Mp3> mp3List;
     private ListView mp3View;
@@ -38,7 +29,6 @@ public class MainActivity extends Activity implements MediaPlayerControl {
     private boolean mp3Bound=false;
     private Mp3Controller controller;
     private boolean paused=false, playbackPaused=false;
-    private static final int STORAGE_PERMISSION_CODE = 101;
 
     @Override
     protected void onPause(){
@@ -75,8 +65,6 @@ public class MainActivity extends Activity implements MediaPlayerControl {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
-
         mp3View = (ListView)findViewById(R.id.mp3_list);
         mp3List = new ArrayList<Mp3>();
 
@@ -90,21 +78,6 @@ public class MainActivity extends Activity implements MediaPlayerControl {
         Mp3Adapter mp3Adt = new Mp3Adapter(this, mp3List);
         mp3View.setAdapter(mp3Adt);
         setController();
-    }
-
-    public void checkPermission(String permission, int requestCode)
-    {
-        if (ContextCompat.checkSelfPermission(MainActivity.this, permission)
-                == PackageManager.PERMISSION_DENIED) {
-
-            // Requesting the permission
-            ActivityCompat.requestPermissions(MainActivity.this,
-                    new String[] {permission},
-                    requestCode);
-        }
-        else {
-
-        }
     }
 
     private void setController(){
