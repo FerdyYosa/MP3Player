@@ -1,6 +1,9 @@
 package com.example.mp3player;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -63,6 +66,14 @@ public class MainActivity extends AppCompatActivity implements MediaController.M
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                    != PackageManager.PERMISSION_GRANTED) {
+
+                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
+
+                return;
+            }}
         setContentView(R.layout.activity_main);
 
         mp3View = (ListView)findViewById(R.id.mp3_list);
