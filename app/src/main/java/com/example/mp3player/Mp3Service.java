@@ -3,21 +3,16 @@ package com.example.mp3player;
 import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.os.Build;
 import android.os.IBinder;
 import java.util.ArrayList;
 import android.content.ContentUris;
 import android.media.AudioManager;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Binder;
 import android.os.PowerManager;
 import android.util.Log;
 import java.util.Random;
-import android.app.Notification;
 import android.app.PendingIntent;
-
-import androidx.annotation.RequiresApi;
 
 public class Mp3Service extends Service implements
         MediaPlayer.OnPreparedListener, MediaPlayer.OnErrorListener,
